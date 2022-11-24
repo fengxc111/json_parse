@@ -41,6 +41,8 @@
 >
 >   The literal names MUST be lowercase.  No other literal names are
 >   allowed.
+>   
+>!()[/images/value.png]
 >
 >      value = false / null / true / object / array / number / string
 >
@@ -57,6 +59,8 @@
 > from the value.  A single comma separates a value from a following
 > name. *The names within an object SHOULD be **unique**.*
 >
+>!()[/images/object.png]
+>
 >      object = begin-object [ member *( value-separator member ) ]
 >               end-object
 >
@@ -65,6 +69,8 @@
 ## 数组
 > An array structure is represented as square brackets surrounding zero
 >   or more values (or elements).  Elements are separated by commas.
+>   
+>!()[/images/array.png]
 >
 >       array = begin-array [ value *( value-separator value ) ] end-array
 >
@@ -84,6 +90,8 @@
 >   sign are followed by one or more digits.
 >
 >   总结一下： 必须是10进制数，不能有前导0或是'+'(正号)；浮点数必须有整数和小数部分；可用科学计数法，其幂部分不能有前导0，但是能有'+'(正号)；不能有表示除数为0(nan)或是溢出(inf)的符号
+>
+>!()[/images/number.png]
 >
 >   Numeric values that cannot be represented in the grammar below (such as Infinity and NaN) are not permitted.
 >
