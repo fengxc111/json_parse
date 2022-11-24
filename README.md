@@ -116,6 +116,8 @@
 >   3. To escape an extended character that is not in the Basic Multilingual Plane, the character is represented as a 12-
 >   character sequence, encoding the UTF-16 surrogate pair.
 >
+>![](/images/string.png)
+>
 >   总结一下：字符串必须以*双引号*(")开头和结尾；  
 >   1.转义utf-8字符，格式为6字节序列：1个\(反斜杠)，1个u(小写的字母u)，4位十六进制数字，其中的字母可大写可小写  
 >       &emsp;eg："\u005C"  
