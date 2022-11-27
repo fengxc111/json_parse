@@ -445,11 +445,16 @@ void lept_free(lept_value* v){
     assert(v != NULL);
     if (v->type == LEPT_STRING){
         free(v->u.s.s);
-    }
-    else if (v->type == LEPT_ARRAY){
+    }else if (v->type == LEPT_ARRAY){
         for (i = 0; i < v->u.a.size; i++)
             lept_free(&v->u.a.e[i]);
         free(v->u.a.e);
+    }else if(v->type == LEPT_OBJECT){
+        for (i = 0; i < v->u.o.size; i++){
+            lept_free(&v->u.o.m[i].v);
+            free(v->u.o.m[i].k);
+        }
+        free(v->u.o.m);
     }
     v->type = LEPT_NULL;
 }
